@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+ 
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  <script type="text/javascript"></script>
+  <!-- This line is money! It points your HTML to the CSS file. -->
+  <!-- Notice the "relative" pathway? It matches a file inside our current directory's "assets" folder. Open it to see our style rules. -->
+  <link rel="stylesheet" type="text/css" href="assets/inspiration.css">
+  <!--<img src="backround1.jpg" alt="Nature" class="responsive">-->
+  <!--<img src="./assets/background1.JPG" alt="Nature" class="responsive" width="100%" height="auto">-->
+   
+</head>
+<body>
+  <header>
+    <h1>Inspiration</h1>
+  </header>
+
+  
+  <script type="text/javascript" language="javascript" ></script> 
+
+  
+  <div id="id01"></div>
+
+  <script>
+  var xmlhttp = new XMLHttpRequest();
+  var url = "data/en_US.json";
+  
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      var myArr = JSON.parse(this.responseText);
+      myFunction(myArr);
+    }
+  };
+  xmlhttp.open("GET", url, true);
+  xmlhttp.send();
+  
+   function myFunction(arr) {
+  //   var out = "";
+  //   var i;
+  //   for(i = 0; i < arr.length; i++) {
+  //     out += '<a href="' + arr[i].url + '">' + 
+  //     arr[i].display + '</a><br>';
+  //   }
+    document.getElementById("id01").innerHTML = out;
+  }
+  </script>
+  
+    
+  
+  
+
+</body>
+
+</html>

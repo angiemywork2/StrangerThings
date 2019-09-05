@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+ 
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  <script type="text/javascript"></script>
+  <!-- This line is money! It points your HTML to the CSS file. -->
+  <!-- Notice the "relative" pathway? It matches a file inside our current directory's "assets" folder. Open it to see our style rules. -->
+  <link rel="stylesheet" type="text/css" href="assets/inspiration.css">
+  <!--<img src="backround1.jpg" alt="Nature" class="responsive">-->
+  <!--<img src="./assets/background1.JPG" alt="Nature" class="responsive" width="100%" height="auto">-->
+  
+  <!-- <script type="text/javascript" src="./data/en_US.json"></script> -->
+
+</head>
+</head>
+<body>
+  <header>
+    <h1>Inspiration</h1>
+  </header>
+
+  
+  <script type="text/javascript" language="javascript" ></script> 
+
+  <div id="demo">
+    <h1>The XMLHttpRequest Object</h1>
+    <!-- <button type="button" onclick="loadDoc()">Change Content</button> -->
+    </div>
+    
+    <script>
+
+function loadJSON(callback) {   
+
+var xobj = new XMLHttpRequest();
+    xobj.overrideMimeType("application/json");
+xobj.open('GET', './data/en_US.json', true); // Replace 'appDataServices' with the path to your file
+xobj.onreadystatechange = function () {
+      if (xobj.readyState == 4 && xobj.status == "200") {
+        // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+        callback(xobj.responseText);
+      }
+};
+xobj.send(null);  
+}
+
+function init() {
+ loadJSON(function(heading) {
+  // Parsing JSON string into object
+    var actual_JSON = JSON.parse(heading);
+ });
+}
+      
+
+      //const myJSON = require('./data/en_US.json');
+      //var myJSON = './data/en_US.json';
+      //var myJSON = '{"name":"John", "age":31, "city":"New York"}';
+     //var myObj = JSON.parse(myJSON);
+      
+          //document.getElementById("demo").innerHTML = myObj.heading;
+        
+      
+     
+    // var myJSON = '{"name":"John", "age":31, "city":"New York"}';
+    // var myJSON = 'data/en_US.json';
+    // var myObj = JSON.parse(myJSON);
+    // document.getElementById("demo").innerHTML = myObj.heading;
+
+    </script>
+    
+  
+  
+
+</body>
+
+</html>

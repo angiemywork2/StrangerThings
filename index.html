@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix Presents: Stranger Things</title>
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+  <link rel="stylesheet" type="text/css" href="assets/style2.css">
+  <!--<img src="backround1.jpg" alt="Nature" class="responsive">-->
+  <!--<img src="./assets/background1.JPG" alt="Nature" class="responsive" width="100%" height="auto">-->
+   
+</head>
+<body>
+  <header>
+    <h1>Netflix's Stranger Things</h1>
+  </header>
+  <div class="navbar">
+    
+    <a href="inspiration.html">Inspiration</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="episodes.html">Episodes</a>
+    <a href="indexLan.html">Home</a>
+   
+  </div>
+  
+  <div class="bg-image"></div>
+  <br><br><br>
+  <div class="bg-text">
+    <h2 style="font-family: fantasy 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">NETFLIX Presents.....</h2>
+    <h1 style="font-size:50px">Stranger Things</h1>
+    <p style="font-style: italic">And..... Stranger Still</p>
+      <div id="details"></div>
+          <div id="insp">
+            <button type="button" onclick="loadDoc()">Walk This Way....</button>
+          </div>
+  </div>
+
+  
+  
+    <!-- <div id="details"></div> -->
+  
+      
+      <script>
+      function loadDoc() {
+        var xhttp = new XMLHttpRequest();
+       
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            var jsonResponse = JSON.parse(this.responseText);
+            document.getElementById("details").innerHTML =
+            jsonResponse.snippets;  
+                   
+          }
+        };
+        
+       xhttp.open("GET", './data/en_US.json', true);
+       xhttp.send();
+      }
+      </script>
+
+</body>
+
+</html>

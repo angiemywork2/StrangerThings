@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  <script type="text/javascript"></script>
+ 
+  <link rel="stylesheet" type="text/css" href="assets/inspiration.css">
+  <!--<img src="backround1.jpg" alt="Nature" class="responsive">-->
+  <!--<img src="./assets/background1.JPG" alt="Nature" class="responsive" width="100%" height="auto">-->
+   
+</head>
+<body>
+  <header>
+    <h1>Inspiration</h1>
+  </header>
+
+  
+  <script type="text/javascript" language="javascript" ></script> 
+
+  <div class="navbar">
+      
+      <a href="inspirationLatin.html">Inspiration</a>
+      <a href="galleryLatin.html">Gallery</a>
+      <a href="episodesLatin.html">Episodes</a>
+      <a href="indexLan.html">Home</a>
+     
+  </div>
+
+  <div id="insp">
+    <h1>The True Inspiration</h1>
+    <button type="button" onclick="loadDoc()">Get The Details....</button>
+  </div>
+
+  <div id="video"></div>
+
+    
+    <script>
+    function loadDoc() {
+      var xhttp = new XMLHttpRequest();
+     
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          var jsonResponse = JSON.parse(this.responseText);
+          document.getElementById("insp").innerHTML =
+          jsonResponse.description;
+
+          document.getElementById("video").innerHTML +="<br>"+ "<a href='"+jsonResponse['video-embed']+"'>Check Out A Snip in this Video</a>" ;
+         
+        }
+      };
+      
+     xhttp.open("GET", './data/la_PG.json', true);
+     xhttp.send();
+    }
+    </script>
+    
+  
+  
+
+</body>
+
+</html>
